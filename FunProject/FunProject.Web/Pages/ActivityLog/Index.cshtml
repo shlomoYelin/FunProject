@@ -1,0 +1,48 @@
+﻿@page
+@model FunProject.Web.Pages.ActivityLog.IndexModel
+
+<h1>Activity Log</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Customer Id
+            </th>
+            <th>
+                First Name
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th>
+                Activity Date
+            </th>
+            <th>
+                Action Type
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ActivityLogs)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Message)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActivityDateShortDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActionType)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
